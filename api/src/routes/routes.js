@@ -1,7 +1,9 @@
 const router = require("express").Router();
 
-router.get("/", (req, res) => {
-  res.send("Hello World");
-});
+module.exports = (db) => {
+  router.get("/", (req, res) => {
+    res.json({ message: "Wasssap" });
+  });
 
-module.exports = router;
+  return router;
+};
