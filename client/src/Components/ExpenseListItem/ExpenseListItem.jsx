@@ -8,13 +8,18 @@ export default function ExpenseListItem({
   deleteExpense
 }) {
   return (
-    <div className="column">
-      <h4>{name}</h4>
-      <h3>${cost}</h3>
-      <h4>{category}</h4>
-      <button onClick={(e) => deleteExpense(id)} className="pointer">
-        DELETE
-      </button>
-    </div>
+    <tr>
+      <td>{name}</td>
+      <td>${cost}</td>
+      <td>{category}</td>
+      <td>
+        <button
+          onClick={(e) => deleteExpense(id)}
+          className="pointer column danger"
+        >
+          DELETE
+        </button>
+      </td>
+    </tr>
   );
 }

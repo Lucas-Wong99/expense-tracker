@@ -10,7 +10,6 @@ export default function App() {
 
   useEffect(() => {
     axios.get("http://localhost:9000/api/expenses").then((res) => {
-      console.log(res.data);
       setExpenses(res.data);
     });
   }, []);

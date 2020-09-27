@@ -13,12 +13,13 @@ export default function InputExpense({ addExpense }) {
           value={name}
           onChange={(e) => setName(e.target.value)}
           type="text"
+          maxLength="30"
         />
       </div>
       <div className="container">
         <label>Cost:</label>
         <input
-          type="text"
+          type="number"
           value={cost}
           onChange={(e) => setCost(e.target.value)}
         />
@@ -29,6 +30,7 @@ export default function InputExpense({ addExpense }) {
           type="text"
           value={category}
           onChange={(e) => setCategory(e.target.value)}
+          maxLength="30"
         />
       </div>
       <button
