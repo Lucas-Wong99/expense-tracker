@@ -2,14 +2,16 @@ import React from "react";
 
 import ExpenseListItem from "../ExpenseListItem/ExpenseListItem";
 
-export default function ExpenseList({ expenses }) {
+export default function ExpenseList({ expenses, deleteExpense }) {
   const expensesMapped = expenses.map((expense) => {
     return (
       <ExpenseListItem
         key={expense.id}
+        id={expense.id}
         name={expense.name}
         cost={expense.cost}
         category={expense.category}
+        deleteExpense={deleteExpense}
       />
     );
   });
