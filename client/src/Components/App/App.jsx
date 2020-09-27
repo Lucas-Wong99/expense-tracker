@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import ExpenseList from "../ExpenseList/ExpenseList";
+import InputExpense from "../InputExpense/InputExpense";
 
 export default function App() {
   const [expenses, setExpenses] = useState([]);
@@ -14,8 +15,9 @@ export default function App() {
   }, []);
 
   return (
-    <div className="App">
+    <section className="section-padding-medium">
+      <InputExpense />
       <ExpenseList expenses={expenses} />
-    </div>
+    </section>
   );
 }
