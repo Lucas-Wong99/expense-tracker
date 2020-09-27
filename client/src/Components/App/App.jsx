@@ -3,9 +3,7 @@ import axios from "axios";
 
 import ExpenseList from "../ExpenseList/ExpenseList";
 import InputExpense from "../InputExpense/InputExpense";
-import Sidebar from "../Sidebar/Sidebar";
-
-import "../../Styles/index.scss";
+import Header from "../Header/Header";
 
 export default function App() {
   const [expenses, setExpenses] = useState([]);
@@ -57,11 +55,16 @@ export default function App() {
   };
 
   return (
-    <section className="columns">
-      <Sidebar />
-      <div className="column">
-        <InputExpense addExpense={addExpense} />
-        <ExpenseList expenses={expenses} deleteExpense={deleteExpense} />
+    <section className="hero is-fullheight">
+      <br />
+      <div className="container is-fluid">
+        <Header />
+        <div className="columns is-centered">
+          <div className="column is-four-fiths">
+            <InputExpense addExpense={addExpense} />
+            <ExpenseList expenses={expenses} deleteExpense={deleteExpense} />
+          </div>
+        </div>
       </div>
     </section>
   );

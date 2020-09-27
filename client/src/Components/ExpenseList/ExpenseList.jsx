@@ -15,5 +15,9 @@ export default function ExpenseList({ expenses, deleteExpense }) {
       />
     );
   });
-  return <div className="list">{expensesMapped}</div>;
+  return (
+    <div className="column">
+      <div className="columns">{expensesMapped}</div>
+    </div>
+  );
 }
