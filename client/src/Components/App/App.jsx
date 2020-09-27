@@ -23,10 +23,10 @@ export default function App() {
         category
       })
       .then((res) => {
-        console.log(res);
         const newExpenses = [
           ...expenses,
           {
+            id: res.data.id,
             name: name,
             cost: cost,
             category: category

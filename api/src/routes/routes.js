@@ -1,5 +1,15 @@
 const router = require("express").Router();
 
+const getLastRecordID = async (db) => {
+  const res = await db.query(
+    `SELECT * FROM expenses
+    ORDER BY date_created DESC
+    LIMIT 1`
+  );
+  const id = res.rows[0].id;
+  return id;
+};
+
 module.exports = (db) => {
   router.get("/", (req, res) => {
     res.json({ message: "WASSSAP" });
@@ -18,14 +28,13 @@ module.exports = (db) => {
     const { name, cost, category } = req.body;
     db.query(
       "INSERT INTO expenses (name, cost, category) VALUES ($1, $2, $3)",
-      [name, cost, category],
-      (error) => {
-        if (error) {
-          throw error;
-        }
-        res.status(201).json({ status: "success", message: "Expense added." });
-      }
-    );
+      [name, cost, category]
+    ).then(async (data) => {
+      const lastRowID = await getLastRecordID(db);
+      res
+        .status(201)
+        .json({ status: "success", message: "Expense added.", id: lastRowID });
+    });
   });
 
   router.post("/expenses/delete", (req, res) => {
