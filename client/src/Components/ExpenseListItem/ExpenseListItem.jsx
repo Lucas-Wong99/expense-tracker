@@ -15,7 +15,7 @@ export default function ExpenseListItem({
       <td>
         <button
           onClick={(e) => deleteExpense(id)}
-          className="pointer column danger"
+          className="pointer button is-danger"
         >
           DELETE
         </button>

@@ -17,14 +17,13 @@ export default function ExpenseList({ expenses, deleteExpense }) {
   });
   return (
     <div className="column table-container">
-      <h2 className="title">Your Expenses</h2>
-      <table className="table">
+      <table className="table is-hoverable is-fullwidth">
         <tbody>
           <tr>
             <th>Name of Expense</th>
             <th>Cost</th>
             <th>Category</th>
-            <th>ToDelete</th>
+            <th></th>
           </tr>
           {expensesMapped}
         </tbody>

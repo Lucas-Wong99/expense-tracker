@@ -58,9 +58,10 @@ export default function App() {
       <br />
       <div className="container is-fluid">
         <Header />
-        <div className="columns is-centered">
+        <div className="column columns is-centered">
           <div className="column is-four-fiths">
             <InputExpense addExpense={addExpense} />
+            <h2 className="title">Your Expenses</h2>
             <ExpenseList expenses={expenses} deleteExpense={deleteExpense} />
           </div>
         </div>
