@@ -16,7 +16,6 @@ module.exports = (db) => {
 
   router.post("/expenses/new", (req, res) => {
     const { name, cost, category } = req.body;
-    console.log("REQUEST OBJ", req.body);
     db.query(
       "INSERT INTO expenses (name, cost, category) VALUES ($1, $2, $3)",
       [name, cost, category],
