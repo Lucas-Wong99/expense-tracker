@@ -37,7 +37,7 @@ export default function InputExpense({ addExpense }) {
         <div className="column">
           <Select
             options={options}
-            placeholder="Select Cetegory..."
+            placeholder="Select Category..."
             isSearchable
             onChange={setCategory}
           />
