@@ -1,7 +1,7 @@
 const options = [
   { value: "Auto/Transport", label: "Auto/Transport" },
   { value: "Bill/Utilities", label: "Bill/Utilities" },
-  { value: "Business servies", label: "Business servies" },
+  { value: "Business Services", label: "Business Services" },
   { value: "Education", label: "Education" },
   { value: "Entertainment", label: "Entertainment" },
   { value: "Fee/Charges", label: "Fee/Charges" },
