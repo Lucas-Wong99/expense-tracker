@@ -2,11 +2,13 @@
 
 # Requirements
 
-Nodejs installed [Node](https://nodejs.org/en/download/)
+MacOS Catalina 10.15.6
+
+Node.js installed [Node](https://nodejs.org/en/download/)
 
 Text editor - Visual Studio Code [VSCode](https://code.visualstudio.com/download)
 
-## Clone app from Github or Download the zip file
+# Download the ZIP File
 
 Go to github repository [Link](https://github.com/Lucas-Wong99/expense-tracker)
 
@@ -14,11 +16,11 @@ Press the "Code" button and select "Download ZIP"
 
 Unzip the "expense-tracker-master.zip" file, which creates "expense-tracker-master" folder
 
-## Accessing the App
+# Accessing the App
 
 Open a Terminal window and navigate to the "expense-tracker-master" folder.
 
-### Installing Dependancies
+## Installing Dependancies
 
 Type command `cd client`
 
@@ -28,7 +30,7 @@ Type command `cd ../api`
 
 Type command `npm install` to install all of the api dependancies.
 
-### Install local postgres database (IF POSTGRES IS NOT INSTALLED FOR MAC-OS)
+## Install Local Postgres Database (IF POSTGRES IS NOT INSTALLED FOR MAC-OS)
 
 Recommend using Homebrew for installation on MacOS
 
@@ -48,11 +50,11 @@ Type command `brew install postgresql`.
 
 Type command `postgres --version` and confirm 12.2 or higher
 
-### Start local postgres database
+## Start Local Postgres Database
 
 Type command `brew services start postgresql`
 
-## Setting up Postgres
+## Setting Up Postgres
 
 Login into postgres:
 
@@ -81,13 +83,13 @@ CREATE DATABASE expense_api;
 \c expense_api
 ```
 
-## Creating table and seeding
+## Creating Table and Seeding
 
 Run this command: `\i src/db/init.sql` to create the table and place one row in it.
 
 Type command `\q`
 
-## Open VSCode and expense-tracker-master
+# Open VS Code and expense-tracker-master
 
 Open VS Code
 
@@ -97,7 +99,7 @@ Navigate to folder with expense-tracker-master and open it.
 
 Click on "api"
 
-## Environment Variables IN VSCODE
+## Environment Variables in VS Code
 
 Click "New file" icon to the right of "EXPENSE-TRACKER..."
 
@@ -115,7 +117,7 @@ DB_DATABASE=expense_api
 
 Type "CMD + s" to save the file.
 
-## To Start Both The Client On Separate Tabs
+# Start Both API and Client On Separate Tabs
 
 From terminal window
 
@@ -139,6 +141,6 @@ expense|
 
 To start the React client type command: `npm start`
 
-### Picture of the App
+## Picture of the App
 
 ![Main Dash2](https://github.com/Lucas-Wong99/expense-tracker/blob/master/docs/main-dash2.png?raw=true)
