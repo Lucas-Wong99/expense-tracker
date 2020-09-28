@@ -1,5 +1,6 @@
 const router = require("express").Router();
 
+//A function that returns the id of the very last record
 const getLastRecordID = async (db) => {
   const res = await db.query(
     `SELECT * FROM expenses
@@ -15,6 +16,7 @@ module.exports = (db) => {
     res.json({ message: "WASSSAP" });
   });
 
+  //This end point returns all of the rows in the expense table
   router.get("/expenses", (req, res) => {
     db.query(
       "SELECT * FROM expenses ORDER BY date_created DESC",
@@ -27,6 +29,7 @@ module.exports = (db) => {
     );
   });
 
+  //This end point inserts a new record into the database
   router.post("/expenses/new", (req, res) => {
     const { name, cost, category } = req.body;
     db.query(
@@ -40,6 +43,7 @@ module.exports = (db) => {
     });
   });
 
+  //This end point deletes a record depending on which id is passed through the body
   router.post("/expenses/delete", (req, res) => {
     const { id } = req.body;
     db.query("DELETE FROM expenses WHERE id = $1", [id], (error) => {
