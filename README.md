@@ -1,4 +1,4 @@
-## Steps to setup
+# Steps to setup
 
 # Requirements
 
@@ -6,7 +6,7 @@ MacOS Catalina 10.15.6
 
 Node.js installed [Node](https://nodejs.org/en/download/)
 
-Text editor - Visual Studio Code [VSCode](https://code.visualstudio.com/download)
+Text editor - Visual Studio Code [VS Code](https://code.visualstudio.com/download)
 
 # Download the ZIP File
 
