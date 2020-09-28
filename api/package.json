@@ -4,9 +4,6 @@
   "private": true,
   "description": "",
   "main": "index.js",
-  "engines": {
-    "node": "12.x"
-  },
   "scripts": {
     "start": "node ./src/index",
     "start:dev": "nodemon ./src/index.js",
