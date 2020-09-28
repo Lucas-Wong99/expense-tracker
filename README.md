@@ -143,4 +143,4 @@ To start the React client type command: `npm start`
 
 ## Picture of the App
 
-![Main Dash2](https://github.com/Lucas-Wong99/expense-tracker/blob/master/docs/main-dash2.png?raw=true)
+![Main Dash](https://github.com/Lucas-Wong99/expense-tracker/raw/master/docs/main-dash2.png?raw=true)
