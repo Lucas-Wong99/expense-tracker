@@ -74,3 +74,6 @@ expense|
 To start the React client run command: `npm start`
 
 ### Pictures of the App
+
+![Main Dash](https://github.com/Lucas-Wong99/expense-tracker/blob/master/docs/main-dash.png?raw=true)
+![Main Dash2](https://github.com/Lucas-Wong99/expense-tracker/blob/master/docs/main-dash2.png?raw=true)
