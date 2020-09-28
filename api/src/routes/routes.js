@@ -16,12 +16,15 @@ module.exports = (db) => {
   });
 
   router.get("/expenses", (req, res) => {
-    db.query("SELECT * FROM expenses", (error, results) => {
-      if (error) {
-        throw error;
+    db.query(
+      "SELECT * FROM expenses ORDER BY date_created DESC",
+      (error, results) => {
+        if (error) {
+          throw error;
+        }
+        res.status(200).json(results.rows);
       }
-      res.status(200).json(results.rows);
-    });
+    );
   });
 
   router.post("/expenses/new", (req, res) => {

@@ -20,13 +20,13 @@ const useApplicationData = () => {
       })
       .then((res) => {
         const newExpenses = [
-          ...expenses,
           {
             id: res.data.id,
             name: name,
             cost: cost,
             category: category
-          }
+          },
+          ...expenses
         ];
         setExpenses(newExpenses);
       });
