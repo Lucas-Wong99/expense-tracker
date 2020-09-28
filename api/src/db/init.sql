@@ -8,4 +8,4 @@ CREATE TABLE expenses (
   date_created TIMESTAMP DEFAULT NOW()
 );
 
-INSERT INTO expenses (name, cost, category) VALUES ("Keg Dinner", 200, "Food/Dining");
+INSERT INTO expenses (name, cost, category) VALUES ('Keg Dinner', 200, 'Food/Dining');

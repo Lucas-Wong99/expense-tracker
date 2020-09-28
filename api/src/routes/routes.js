@@ -16,15 +16,13 @@ module.exports = (db) => {
   });
 
   router.get("/expenses", (req, res) => {
-    db.query(
-      "SELECT * FROM expenses ORDER BY date_created DESC",
-      (error, results) => {
-        if (error) {
-          throw error;
-        }
+    db.query("SELECT * FROM expenses ORDER BY date_created DESC")
+      .then((res) => {
         res.status(200).json(results.rows);
-      }
-    );
+      })
+      .catch((err) => {
+        throw err;
+      });
   });
 
   router.post("/expenses/new", (req, res) => {
@@ -32,12 +30,20 @@ module.exports = (db) => {
     db.query(
       "INSERT INTO expenses (name, cost, category) VALUES ($1, $2, $3)",
       [name, cost, category]
-    ).then(async (data) => {
-      const lastRowID = await getLastRecordID(db);
-      res
-        .status(201)
-        .json({ status: "success", message: "Expense added.", id: lastRowID });
-    });
+    )
+      .then(async (data) => {
+        const lastRowID = await getLastRecordID(db);
+        res
+          .status(201)
+          .json({
+            status: "success",
+            message: "Expense added.",
+            id: lastRowID
+          });
+      })
+      .catch((err) => {
+        throw err;
+      });
   });
 
   router.post("/expenses/delete", (req, res) => {

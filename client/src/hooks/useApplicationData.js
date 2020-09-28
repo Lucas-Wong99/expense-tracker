@@ -5,15 +5,17 @@ const useApplicationData = () => {
   const [expenses, setExpenses] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:9000/api/expenses").then((res) => {
-      setExpenses(res.data);
-    });
+    axios
+      .get("https://expenses-api-wong2020.herokuapp.com/api/expenses")
+      .then((res) => {
+        setExpenses(res.data);
+      });
   }, []);
 
   const addExpense = (name, cost, category) => {
     if (name === "" || cost === "" || category === "") return;
     return axios
-      .post("http://localhost:9000/api/expenses/new", {
+      .post("https://expenses-api-wong2020.herokuapp.com/api/expenses/new", {
         name,
         cost,
         category
@@ -34,7 +36,7 @@ const useApplicationData = () => {
 
   const deleteExpense = (id) => {
     return axios
-      .post("http://localhost:9000/api/expenses/delete", {
+      .post("https://expenses-api-wong2020.herokuapp.com/api/expenses/delete", {
         id: id
       })
       .then((res) => {
