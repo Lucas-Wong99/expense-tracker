@@ -3,7 +3,7 @@
 CREATE TABLE expenses (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NUll,
-  cost INTEGER NOT NULL,
+  cost NUMERIC(8, 2) NOT NULL,
   category VARCHAR(255) NOT NULL,
   date_created TIMESTAMP DEFAULT NOW()
 );
