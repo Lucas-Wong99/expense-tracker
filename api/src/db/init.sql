@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS expenses CASCADING
+-- DROP TABLE IF EXISTS expenses CASCADING;
 
 CREATE TABLE expenses (
   id SERIAL PRIMARY KEY,
@@ -8,4 +8,4 @@ CREATE TABLE expenses (
   date_created TIMESTAMP DEFAULT NOW()
 );
 
-INSERT INTO expenses (name, cost, category) VALUES ("Keg Dinner", 200, "Food");
+INSERT INTO expenses (name, cost, category) VALUES ("Keg Dinner", 200, "Food/Dining");
